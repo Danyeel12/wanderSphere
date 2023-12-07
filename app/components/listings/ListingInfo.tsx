@@ -9,8 +9,8 @@ import { SafeUser } from "@/app/types";
 import Avatar from "../Avatar";
 import ListingCategory from "./ListingCategory";
 
-const Map = dynamic(() => import('../Map'), { 
-  ssr: false 
+const Map = dynamic(() => import('../Map'), {
+  ssr: false,
 });
 
 interface ListingInfoProps {
@@ -90,7 +90,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
         {description}
       </div>
       <hr />
-      <Map center={coordinates} />
+      {coordinates && <Map center={coordinates} />}
     </div>
    );
 }
